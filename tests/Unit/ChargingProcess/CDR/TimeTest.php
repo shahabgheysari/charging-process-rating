@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit\CDR;
+namespace Tests\Unit\ChargingProcess\CDR;
 
 use App\ChargingProcess\CDR\Time;
 use PHPUnit\Framework\TestCase;
