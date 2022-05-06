@@ -19,4 +19,13 @@ class Time
     {
         return $this->seconds;
     }
+
+    /**
+     * converts the seconds to hours
+     * @return float|int
+     */
+    public function toHours(): float|int
+    {
+        return $this->seconds / 3600;
+    }
 }
