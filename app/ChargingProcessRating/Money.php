@@ -1,6 +1,6 @@
 <?php
 
-namespace App\ChargingProcess;
+namespace App\ChargingProcessRating;
 
 
 class Money

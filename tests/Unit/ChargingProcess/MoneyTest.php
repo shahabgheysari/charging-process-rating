@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\ChargingProcess;
 
-use App\ChargingProcess\Money;
+use App\ChargingProcessRating\Money;
 use PHPUnit\Framework\TestCase;
 
 class MoneyTest extends TestCase

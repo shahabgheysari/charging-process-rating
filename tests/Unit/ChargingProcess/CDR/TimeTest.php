@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\ChargingProcess\CDR;
 
-use App\ChargingProcess\CDR\Time;
+use App\ChargingProcessRating\CDR\Time;
 use PHPUnit\Framework\TestCase;
 use Tests\Unit\FloatValueAssertHelper;
 

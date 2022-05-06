@@ -1,6 +1,6 @@
 <?php
 
-namespace App\ChargingProcess\CDR;
+namespace App\ChargingProcessRating\CDR;
 
 class Transaction
 {
