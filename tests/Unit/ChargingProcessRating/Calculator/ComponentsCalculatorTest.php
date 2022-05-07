@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
 
 class ComponentsCalculatorTest extends TestCase
 {
-    public function testCalculateOne()
+    public function testCalculate()
     {
         $CDR = new CDR(new Energy(10.923), new Time(4980), new Transaction());
         $rate = new Rate(new Money(0.30), new Money(2), new Money(1));
