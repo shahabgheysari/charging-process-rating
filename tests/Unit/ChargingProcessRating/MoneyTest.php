@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit\ChargingProcess;
+namespace Tests\Unit\ChargingProcessRating;
 
 use App\ChargingProcessRating\Money;
 use PHPUnit\Framework\TestCase;
