@@ -18,7 +18,7 @@ class OverallCalculatorTest extends TestCase
 
     public function testCalculate()
     {
-        $CDR = new CDR(new Energy(10.923), new Time(4980), new Transaction());
+        $CDR = new CDR(new Energy(10923), new Time(4980), new Transaction());
         $rate = new Rate(new Money(0.30), new Money(2), new Money(1));
         $chargingProcess = new ChargingProcess($rate,$CDR);
         $sut = new OverallCalculator(new ComponentsCalculator());

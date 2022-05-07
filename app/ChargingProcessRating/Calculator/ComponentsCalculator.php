@@ -22,7 +22,7 @@ class ComponentsCalculator
      */
     private function calculateEnergyAmount(ChargingProcess $chargingProcess): Money
     {
-        return $chargingProcess->getRate()->getEnergy()->multiply($chargingProcess->getCDR()->getEnergy()->getAmount());
+        return $chargingProcess->getRate()->getEnergy()->multiply($chargingProcess->getCDR()->getEnergy()->toKWh());
     }
 
     /**

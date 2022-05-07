@@ -5,19 +5,30 @@ namespace App\ChargingProcessRating\CDR;
 class Energy
 {
 
-    private float $amount;
+    private float $wh;
 
-    public function __construct(float $amount)
+    /**
+     * @param float $wh watt-hour
+     */
+    public function __construct(float $wh)
     {
-        $this->amount = $amount;
+        $this->wh = $wh;
     }
 
     /**
      * @return float
      */
-    public function getAmount(): float
+    public function getWh(): float
     {
-        return $this->amount;
+        return $this->wh;
+    }
+
+    /**
+     * @return float|int
+     */
+    public function toKWh(): float|int
+    {
+        return $this->wh / 1000;
     }
 
 
