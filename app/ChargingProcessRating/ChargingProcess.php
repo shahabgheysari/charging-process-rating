@@ -10,6 +10,10 @@ class ChargingProcess
     private Rate $rate;
     private CDR $CDR;
 
+    /**
+     * @param Rate $rate
+     * @param CDR $CDR
+     */
     public function __construct(Rate $rate, CDR $CDR)
     {
         $this->rate = $rate;

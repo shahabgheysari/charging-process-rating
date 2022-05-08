@@ -9,6 +9,11 @@ class CDR
     private Time $time;
     private Transaction $transaction;
 
+    /**
+     * @param Energy $energy
+     * @param Time $time
+     * @param Transaction $transaction
+     */
     public function __construct(Energy $energy, Time $time, Transaction $transaction)
     {
         $this->energy = $energy;

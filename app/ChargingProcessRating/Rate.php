@@ -9,6 +9,11 @@ class Rate
     private Money $time;
     private Money $transaction;
 
+    /**
+     * @param Money $energy
+     * @param Money $time
+     * @param Money $transaction
+     */
     public function __construct(Money $energy, Money $time, Money $transaction)
     {
         $this->energy = $energy;
