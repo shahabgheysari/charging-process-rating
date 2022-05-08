@@ -11,26 +11,26 @@ class InputModel
     private int $meterStop;
     private DateTime $timestampStart;
     private DateTime $timestampStop;
-    private int|float|string $energyCost;
-    private int|float|string $timeCost;
-    private int|float|string $transactionCost;
+    private int|float|string $energyPrice;
+    private int|float|string $timePrice;
+    private int|float|string $transactionPrice;
 
     /**
      * @param int $meterStart
      * @param int $meterStop
      * @param DateTime $timestampStart
      * @param DateTime $timestampStop
-     * @param float|int|string $energyCost
-     * @param float|int|string $timeCost
-     * @param float|int|string $transactionCost
+     * @param float|int|string $energyPrice
+     * @param float|int|string $timePrice
+     * @param float|int|string $transactionPrice
      */
-    public function __construct(int $meterStart,
-                                int $meterStop,
-                                DateTime $timestampStart,
-                                DateTime $timestampStop,
-                                float|int|string $energyCost,
-                                float|int|string $timeCost,
-                                float|int|string $transactionCost)
+    public function __construct(int              $meterStart,
+                                int              $meterStop,
+                                DateTime         $timestampStart,
+                                DateTime         $timestampStop,
+                                float|int|string $energyPrice,
+                                float|int|string $timePrice,
+                                float|int|string $transactionPrice)
     {
         if ($meterStart > $meterStop){
             throw  new InvalidArgumentException('meterStart should be less than meterStop');
@@ -42,9 +42,9 @@ class InputModel
         $this->meterStop = $meterStop;
         $this->timestampStart = $timestampStart;
         $this->timestampStop = $timestampStop;
-        $this->energyCost = $energyCost;
-        $this->timeCost = $timeCost;
-        $this->transactionCost = $transactionCost;
+        $this->energyPrice = $energyPrice;
+        $this->timePrice = $timePrice;
+        $this->transactionPrice = $transactionPrice;
     }
 
     /**
@@ -82,25 +82,25 @@ class InputModel
     /**
      * @return float|int|string
      */
-    public function getEnergyCost(): float|int|string
+    public function getEnergyPrice(): float|int|string
     {
-        return $this->energyCost;
+        return $this->energyPrice;
     }
 
     /**
      * @return float|int|string
      */
-    public function getTimeCost(): float|int|string
+    public function getTimePrice(): float|int|string
     {
-        return $this->timeCost;
+        return $this->timePrice;
     }
 
     /**
      * @return float|int|string
      */
-    public function getTransactionCost(): float|int|string
+    public function getTransactionPrice(): float|int|string
     {
-        return $this->transactionCost;
+        return $this->transactionPrice;
     }
 
 }

@@ -32,9 +32,9 @@ class InputModelMapper
 
     private function makeRate(InputModel $inputModel): Rate
     {
-        $energy = new Money($inputModel->getEnergyCost());
-        $time = new Money($inputModel->getTimeCost());
-        $transaction = new Money($inputModel->getTransactionCost());
+        $energy = new Money($inputModel->getEnergyPrice());
+        $time = new Money($inputModel->getTimePrice());
+        $transaction = new Money($inputModel->getTransactionPrice());
         return new Rate($energy, $time, $transaction);
     }
 }
