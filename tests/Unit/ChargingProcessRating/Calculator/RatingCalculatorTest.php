@@ -17,14 +17,20 @@ use PHPUnit\Framework\TestCase;
 class RatingCalculatorTest extends TestCase
 {
 
+
+    private function createRatingCalculator(): RatingCalculator
+    {
+        $componentsCalculator = new ComponentsCalculator();
+        $overallCalculator = new OverallCalculator($componentsCalculator);
+        return new RatingCalculator($overallCalculator, $componentsCalculator);
+    }
+
     public function testCalculate()
     {
         $CDR = new CDR(new Energy(10923), new Time(4980), new Transaction());
         $rate = new Rate(new Money(0.30), new Money(2), new Money(1));
         $chargingProcess = new ChargingProcess($rate,$CDR);
-        $componentsCalculator = new ComponentsCalculator();
-        $overallCalculator = new OverallCalculator($componentsCalculator);
-        $sut = new RatingCalculator($overallCalculator,$componentsCalculator);
+        $sut = $this->createRatingCalculator();
 
         $result = $sut->calculate($chargingProcess);
 
