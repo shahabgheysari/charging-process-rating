@@ -22,3 +22,9 @@ consider that default port for first two is *8000*
     - api documentation will be available at {APP_URL}/api/documentation
 #Tests
 - run: *php artisan test*
+
+#Suggestions
+- adding version to our api (api/v1/rate) - (also adding _api_ to the URI that is added by default in the Laravel)
+- adding an output model to uniform responses, it's also possible to separate error and success response's model 
+(as I added (demo version) in try-catch part of _rate_ method in _RatingController_)
+- adding related resource in URI (here it can be _charging-processes_ : _api/v1/charging-processes/rate_)
