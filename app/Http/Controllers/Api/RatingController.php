@@ -5,11 +5,13 @@ namespace App\Http\Controllers\Api;
 use App\ChargingProcessRating\Service\InputModel;
 use App\ChargingProcessRating\Service\OutputModel;
 use App\ChargingProcessRating\Service\Service;
+use App\Http\Controllers\Api\Model\ApiOutput;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RateChargingProcessRequest;
 use DateTime;
 use Exception;
 use Illuminate\Http\JsonResponse;
+use InvalidArgumentException;
 
 class RatingController extends Controller
 {
@@ -71,9 +73,19 @@ class RatingController extends Controller
      **/
     public function rate(RateChargingProcessRequest $request): JsonResponse
     {
-        $inputModel = $this->makeInputModel($request->all());
+        try {
+            $inputModel = $this->makeInputModel($request->all());
+        } catch (InvalidArgumentException $exception) {
+            /**
+             * ApiOutput is an improvement suggestion
+             */
+            $output = new ApiOutput();
+            $output->addError($exception->getMessage());
+            return response()->json($output, 422);
+        }
+
         $result = $this->service->calculate($inputModel);
-         return response()->json($this->makeResponseOutput($result));
+        return response()->json($this->makeResponseOutput($result));
     }
 
     /**
