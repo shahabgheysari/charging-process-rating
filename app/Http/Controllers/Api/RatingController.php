@@ -21,6 +21,54 @@ class RatingController extends Controller
         $this->service = $service;
     }
 
+
+    /**
+     * @OA\Post(
+     ** path="/api/rate",
+     *   tags={"rate"},
+     *   summary="applys rate on a charging detail",
+     *   operationId="rate",
+     * @OA\RequestBody(
+     *    required=true,
+     *    description="rate and cdr info",
+     *        @OA\JsonContent(
+     *             type="object",
+     *             @OA\Examples(
+     *        summary="request body example",
+     *        example = "request body example",
+     *        value = {
+     *              "rate": {
+     *                          "energy": 0.3,
+     *                          "time": 2,
+     *                          "transaction":1
+     *                       },
+     *              "cdr": {
+     *                      "meterStart": 1204307,
+     *                      "timestampStart": "2021-04-05T10:04:00Z",
+     *                      "meterStop": 1215230,
+     *                      "timestampStop": "2021-04-05T11:27:00Z"
+     *                      }
+     *         },
+     *      )
+     *        ),
+     * ),
+     *   @OA\Response(
+     *      response=200,
+     *       description="Success",
+     *      @OA\MediaType(
+     *           mediaType="application/json",
+     *      )
+     *   ),
+     *   @OA\Response(
+     *      response=422,
+     *       description="validation failed"
+     *   ),
+     *   @OA\Response(
+     *      response=500,
+     *      description="server error"
+     *   ),
+     *)
+     **/
     public function rate(RateChargingProcessRequest $request): JsonResponse
     {
         $inputModel = $this->makeInputModel($request->all());

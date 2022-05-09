@@ -16,7 +16,9 @@ consider that default port for first two is *8000*
     - run: *composer install* 
 - clone .env.example file and name .env
 - run: *php artisan key:generate --ansi* (for docker this will be done automatically)
+- set APP_URL in .env file
 - run: *php artisan serve* (http://127.0.0.1:8000)
-
+- run: *php artisan l5-swagger:generate* 
+    - api documentation will be available at {APP_URL}/api/documentation
 #Tests
 - run: *php artisan test*
