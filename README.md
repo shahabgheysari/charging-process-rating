@@ -1,6 +1,5 @@
 # has-to-be charging process app
 
-# Deployment instructions
 # Running app
 use one of the following choices:
 consider that default port for first two is *8000*
@@ -20,10 +19,10 @@ consider that default port for first two is *8000*
 - run: *php artisan serve* (http://127.0.0.1:8000)
 - run: *php artisan l5-swagger:generate* 
     - api documentation will be available at {APP_URL}/api/documentation
-#Tests
+# Tests
 - run: *php artisan test*
 
-#Suggestions
+# Suggestions (Challenge 2)
 - adding version to our api (api/v1/rate) - (also adding _api_ to the URI that is added by default in the Laravel)
 - adding an output model to uniform responses, it's also possible to separate error and success response's model 
 (as I added (demo version) in try-catch part of _rate_ method in _RatingController_)
