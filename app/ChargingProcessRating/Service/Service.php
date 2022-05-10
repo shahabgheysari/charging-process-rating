@@ -5,7 +5,7 @@ namespace App\ChargingProcessRating\Service;
 use App\ChargingProcessRating\Calculator\RatingCalculator;
 use App\ChargingProcessRating\Calculator\RatingResult;
 
-class Service
+class Service implements ServiceInterface
 {
 
     private RatingCalculator $ratingCalculator;

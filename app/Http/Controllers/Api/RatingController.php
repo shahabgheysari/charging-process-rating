@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\ChargingProcessRating\Service\InputModel;
 use App\ChargingProcessRating\Service\OutputModel;
 use App\ChargingProcessRating\Service\Service;
+use App\ChargingProcessRating\Service\ServiceInterface;
 use App\Http\Controllers\Api\Model\ApiOutput;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RateChargingProcessRequest;
@@ -16,9 +17,9 @@ use InvalidArgumentException;
 class RatingController extends Controller
 {
 
-    private Service $service;
+    private ServiceInterface $service;
 
-    public function __construct(Service $service)
+    public function __construct(ServiceInterface $service)
     {
         $this->service = $service;
     }
