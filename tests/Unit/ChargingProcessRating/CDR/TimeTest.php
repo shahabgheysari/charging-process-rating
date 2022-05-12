@@ -10,7 +10,7 @@ class TimeTest extends TestCase
 {
     use FloatValueAssertHelper;
 
-    public function testToHoursOne()
+    public function testConversionToHourTestOne()
     {
         $sut = new Time(1200);
 
@@ -20,7 +20,7 @@ class TimeTest extends TestCase
 
     }
 
-    public function testToHoursTwo()
+    public function testConversionToHourTestTwo()
     {
         $sut = new Time(12500);
 
